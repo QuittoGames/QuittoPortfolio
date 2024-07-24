@@ -136,6 +136,12 @@ footer p {
     margin-right: 20px;
 }
 
+/* Classe específica para o ícone do projeto de restaurante */
+.project.restaurant img {
+    width: 120px; /* Aumenta o tamanho do ícone */
+    height: 120px;
+}
+
 .project-content {
     flex: 1;
 }
