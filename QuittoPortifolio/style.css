@@ -9,7 +9,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1a1a1a;
-    color: #f0f0f0;
+    color: #eaeaea;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -52,15 +52,15 @@ a:hover {
 header, footer {
     background: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     text-align: center;
 }
 
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .logo {
@@ -96,6 +96,10 @@ footer p {
 }
 
 /* Seções */
+section {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
 .about-me, .skills, .certificates, .projects {
     padding: 2rem 0;
 }
@@ -111,12 +115,19 @@ footer p {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.skills li:hover, .certificates li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Projetos */
 .projects {
     padding: 2rem 0;
     background-color: #292929;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project {
@@ -146,12 +157,6 @@ footer p {
 
 .project img:hover {
     transform: scale(1.1);
-}
-
-/* Classe específica para o ícone do projeto de restaurante */
-.project.restaurant img {
-    width: 120px; /* Aumenta o tamanho do ícone */
-    height: 120px;
 }
 
 .project-content {
@@ -256,5 +261,41 @@ footer p {
     .project-buttons .button {
         padding: 6px 14px;
         font-size: 0.875rem;
+    }
+}
+
+/* Botão flutuante interativo */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #1e90ff, #1c86ee);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top:hover {
+    background-color: #1c86ee;
+    transform: scale(1.1) translateY(-3px);
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
